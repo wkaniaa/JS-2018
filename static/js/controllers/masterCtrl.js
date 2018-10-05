@@ -29,10 +29,36 @@ angular.module('myApp.controllers').controller('masterCtrl',
             };
 
 
+            $scope.sortByNazwisko = function () {
+                $scope.M.results.sort(function (a, b) {
+                    let nameA = a.nazwisko.toUpperCase();
+                    let nameB = b.nazwisko.toUpperCase();
+                    if (nameA===nameB) return 0;
+                    if (nameA<nameB) return -1;
+                    else return 1;
+                });
+            };
+
+            $scope.sortByScore = function () {
+                $scope.M.results.sort(function (a, b) {
+                    let aa = a.score;
+                    let bb = b.score;
+                    if (aa===bb) return 0;
+                    if (aa<bb) return 1;
+                    else return -1;
+                });
+            };
+
+
             ////// INIT STATE
 
             $scope.M.results = [
-                {imie:'Ariel', nazwisko:'Wrong', score:11}];
+                {imie:'Rafael', nazwisko:'Nadal', score:8760},
+                {imie:'Roger', nazwisko:'Federer', score:6900},
+                {imie:'Novak', nazwisko:'Djokovic', score:6445},
+                {imie:'Juan Martin', nazwisko:'del Potro', score:5980},
+                {imie:'Alexander', nazwisko:'Zverev', score:4890}
+            ];
 
             /////////////////////////////////////////////////////////////
 
