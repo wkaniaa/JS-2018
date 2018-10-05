@@ -34,25 +34,54 @@
         </tbody>
     </table>
 
-    <div class="card">
-        <div class="card-header">
-            {{nazwaArtykulu}} {{x}}
-        </div>
-        <div class="card-body">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    {{nazwaArtykulu}} {{x}}
+                </div>
+                <div class="card-body">
 
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                    Wynik dodawania x i y = {{ x * y}}  <br>
-                    W zmiennej AABB jest: {{AABB + AABB}}
-                </p>
-                <input type="text" ng-model="x" placeholder="zmienna x">
-                <input type="text" ng-model="y" placeholder="zmienna y">
-                <button class="btn btn-primary" ng-click="wyliczIloraz(x,y)">
-                    Wylicz iloraz</button>
-                <input type="text" ng-model="iloraz" readonly="true">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">
+                            Wynik dodawania x i y = {{ x + y}}  <br>
+                            W zmiennej AABB jest: {{AABB + AABB}}
+                        </p>
+                        <input type="text" ng-model="x" placeholder="zmienna x">
+                        <input type="text" ng-model="y" placeholder="zmienna y">
+                        <button class="btn btn-primary" ng-click="wyliczIloraz(x,y)">
+                            Wylicz iloraz</button>
+                        <input type="text" ng-model="iloraz" readonly="true">
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="col-sm-6">
+
+            <div class="card">
+                <div class="card-header">
+                    Panel edycji
+                </div>
+                <div class="card-body">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Edycja punktów gracza</h5>
+                        <p class="card-text">
+                            Tu edytujemy punkty
+                        </p>
+                        <input type="text" ng-model="x">
+                        <input type="text" ng-model="y" ng-keydown="$even.keyCode===13 && doit()">
+                        <button class="btn btn-primary" ng-click="wyliczIloraz(x,y)">
+                            Wylicz iloraz</button>
+                        <input type="text" ng-model="iloraz" readonly="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 
 </div>

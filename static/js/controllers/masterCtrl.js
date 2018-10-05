@@ -24,10 +24,14 @@ angular.module('myApp.controllers').controller('masterCtrl',
                 });
             };
 
+            $scope.doit = function () {
+
+                alert('ok');
+            };
+
             $scope.wyliczIloraz = function(xxx, yyy) {
                 $scope.iloraz = xxx / yyy;
             };
-
 
             $scope.sortByNazwisko = function () {
                 $scope.M.results.sort(function (a, b) {
