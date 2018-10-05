@@ -5,12 +5,14 @@ angular.module('myApp.controllers',[]);
 angular.module('myApp.controllers').controller('masterCtrl',
     ['$rootScope','$scope', '$http', '$window', '$log',
         function ($rootScope, $scope, $http, $window, $log) {
+            /////////////////////////////////////////////////////////////
             $scope.M = {};
             $scope.M.results = [];
             $scope.search = {};
+            $scope.iloraz = 0;
 
-
-
+            $scope.AABB = 12; //to jest liczba
+            $scope.nazwaArtykulu = 'BREAKING NEWS'; //to jest napis
 
             $scope.callSomeHttp = function(){
                 return $http({
@@ -22,10 +24,17 @@ angular.module('myApp.controllers').controller('masterCtrl',
                 });
             };
 
+            $scope.wyliczIloraz = function(xxx, yyy) {
+                $scope.iloraz = xxx / yyy;
+            };
+
+
             ////// INIT STATE
 
             $scope.M.results = [
                 {imie:'Ariel', nazwisko:'Wrong', score:11}];
+
+            /////////////////////////////////////////////////////////////
 
         }
     ]
