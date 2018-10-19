@@ -8,19 +8,22 @@ angular.module('myApp.controllers').controller('masterCtrl',
             /////////////////////////////////////////////////////////////
             $scope.M = {};
             $scope.M.results = [];
+            $scope.M.todo = [];
+
+
             $scope.search = {};
             $scope.iloraz = 0;
 
             $scope.AABB = 12; //to jest liczba
             $scope.nazwaArtykulu = 'BREAKING NEWS'; //to jest napis
 
-            $scope.callSomeHttp = function(){
+            $scope.getTodos = function(){
                 return $http({
-                    url: 'http://google.com/cleanup',
+                    url: 'https://jsonplaceholder.typicode.com/posts',
                     method: 'GET',
                     headers: {'Content-Type': 'application/json'}
                 }).success(function(data){
-                    $log.info('Google DB deleted');
+                    $scope.M.todo = data.slice(0,10);
                 });
             };
 

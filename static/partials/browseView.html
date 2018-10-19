@@ -23,34 +23,44 @@
 
 
     <div class="row">
-        <div class="col-sm-2 boxed">
-            Lorem ipsum
+        <div class="col-sm-6 boxed">
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr class="table-info">
+                    <th width="30%" ng-click="M.tableorder='sourceHost'" class="clickable"> Imię</th>
+                    <th width="30%" ng-click="M.tableorder='receiverHost'" class="clickable"> Nazwisko</th>
+                    <th width="20%" ng-click="M.tableorder='group'" class="clickable"> Score</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="r in M.results">
+                    <td>{{r.imie}}</td>
+                    <td>{{r.nazwisko}}</td>
+                    <td class="table-warning">{{r.score}}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <div class="col-sm-6 boxed">
-            Wyniki wyborów...
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr class="table-info">
+                    <th width="30%"  class="clickable"> UserId</th>
+                    <th width="30%"  class="clickable"> Tytuł</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="r in M.todo">
+                    <td>{{r.userId}}</td>
+                    <td>{{r.title}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-primary" ng-click="getTodos()">
+                <i class="fas fa-sync"></i> </button>
         </div>
-        <div class="col-sm-4 boxed">
-            News...
-        </div>
+
     </div>
-
-
-    <table class="table table-hover table-bordered">
-        <thead>
-        <tr class="table-info">
-            <th width="30%" ng-click="M.tableorder='sourceHost'" class="clickable"> Imię</th>
-            <th width="30%" ng-click="M.tableorder='receiverHost'" class="clickable"> Nazwisko</th>
-            <th width="20%" ng-click="M.tableorder='group'" class="clickable"> Score</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="r in M.results">
-            <td>{{r.imie}}</td>
-            <td>{{r.nazwisko}}</td>
-            <td class="table-warning">{{r.score}}</td>
-        </tr>
-        </tbody>
-    </table>
 
     <div class="row">
         <div class="col-sm-6">
@@ -71,9 +81,9 @@
                         <input type="text" ng-model="x" placeholder="zmienna x">
                         <input type="text" ng-model="y" placeholder="zmienna y">
                         <button class="btn btn-primary" ng-click="wyliczIloraz(x,y)"
-                            title="Wylicz iloraz">
+                                title="Wylicz iloraz">
                             <i class="fas fa-calculator display-5"></i>
-                            </button>
+                        </button>
                         <input type="text" ng-model="iloraz" readonly="true">
                     </div>
                 </div>
