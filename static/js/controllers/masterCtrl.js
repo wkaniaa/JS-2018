@@ -30,9 +30,12 @@ angular.module('myApp.controllers').controller('masterCtrl',
 
 
             ////// INIT STATE
-
+            //można załadować z https://jsonplaceholder.typicode.com/posts
             $scope.M.results = [
-                {imie:'Ariel', nazwisko:'Wrong', score:11}];
+                {imie:'Ariel', nazwisko:'Wrong', score:11},
+                {imie:'Ban', nazwisko:'Xiao', score:10},
+                {imie:'Wong', nazwisko:'Li', score:88},
+            ];
 
             /////////////////////////////////////////////////////////////
 

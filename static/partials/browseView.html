@@ -22,9 +22,22 @@
     </div>
 
 
-    <table class="table table-hover table-striped">
+    <div class="row">
+        <div class="col-sm-2 boxed">
+            Lorem ipsum
+        </div>
+        <div class="col-sm-6 boxed">
+            Wyniki wyborów...
+        </div>
+        <div class="col-sm-4 boxed">
+            News...
+        </div>
+    </div>
+
+
+    <table class="table table-hover table-bordered">
         <thead>
-        <tr>
+        <tr class="table-info">
             <th width="30%" ng-click="M.tableorder='sourceHost'" class="clickable"> Imię</th>
             <th width="30%" ng-click="M.tableorder='receiverHost'" class="clickable"> Nazwisko</th>
             <th width="20%" ng-click="M.tableorder='group'" class="clickable"> Score</th>
@@ -34,7 +47,7 @@
         <tr ng-repeat="r in M.results">
             <td>{{r.imie}}</td>
             <td>{{r.nazwisko}}</td>
-            <td>{{r.score}}</td>
+            <td class="table-warning">{{r.score}}</td>
         </tr>
         </tbody>
     </table>
@@ -57,8 +70,10 @@
                         </p>
                         <input type="text" ng-model="x" placeholder="zmienna x">
                         <input type="text" ng-model="y" placeholder="zmienna y">
-                        <button class="btn btn-primary" ng-click="wyliczIloraz(x,y)">
-                            Wylicz iloraz</button>
+                        <button class="btn btn-primary" ng-click="wyliczIloraz(x,y)"
+                            title="Wylicz iloraz">
+                            <i class="fas fa-calculator display-5"></i>
+                            </button>
                         <input type="text" ng-model="iloraz" readonly="true">
                     </div>
                 </div>
