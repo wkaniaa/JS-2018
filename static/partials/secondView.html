@@ -2,6 +2,7 @@
     <h4 class="text-center" style="margin: 7px"> Drugi widok </h4>
 
 
+    <!-- Sekcja przycisków na górze -->
     <div class="row">
         <div class="col-sm-5">
             <button class="btn btn-primary" ng-click="M.wynik='kliknięty'"> Ustaw
@@ -17,11 +18,30 @@
         </div>
     </div>
 
-
+    <!-- Sekcja akcji na dole -->
     <div class="row">
         <!-- tu może być col-sm-6, col-md-6, col-lg-6 -->
         <div class="col-lg-6 boxed">
-           (dodać trzy inputy tutaj)
+            <div class="card">
+                <div class="card-header">
+                    Trójkąty
+                </div>
+                <div class="card-body">
+
+                    <div class="card-body">
+                        <p class="card-text">
+                            Boki trójkąta
+                        </p>
+                        <input type="text" ng-model="M.bokA" placeholder="bok A">
+                        <input type="text" ng-model="M.bokB" placeholder="bok B">
+                        <input type="text" ng-model="M.bokC" placeholder="bok C">
+                        <button class="btn btn-primary" ng-click="sprawdzTrojkat()">
+                            <i class="fas fa-calculator display-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="col-lg-6 boxed">
             <div class="form-group">
