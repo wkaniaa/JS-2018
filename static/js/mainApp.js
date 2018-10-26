@@ -11,23 +11,24 @@ app.config(['$routeProvider', '$logProvider', function ($routeProvider, $logProv
     let urlBase = 'partials/';
 
     $routeProvider.when('/', {
-        templateUrl: urlBase + 'browseView.html',
-        controller: 'masterCtrl'
-    }).when('/toolsView', {
-        templateUrl: urlBase + 'browseView.html',
-        controller: 'masterCtrl'
-    }).when('/browseView', {
-        templateUrl: urlBase + 'browseView.html',
-        controller: 'masterCtrl'
+        templateUrl: urlBase + 'firstView.html',
+        controller: 'firstCtrl'
+    }).when('/firstView', {
+        templateUrl: urlBase + 'firstView.html',
+        controller: 'firstCtrl'
+    }).when('/secondView', {
+        templateUrl: urlBase + 'secondView.html',
+        controller: 'secondCtrl'
     });
 }]);
 
 //// COMMON DEFINITIONS
 app.run(function ($rootScope, $window, $http, $location, $timeout, $interval) {
+    console.log('Loading global function `run`');
+
     $rootScope.R = {};
 
     //Global properties
-    console.log('Global run');
 
 
 });

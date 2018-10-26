@@ -2,10 +2,11 @@
 angular.module('myApp.controllers',[]);
 
 
-angular.module('myApp.controllers').controller('masterCtrl',
+angular.module('myApp.controllers').controller('firstCtrl',
     ['$rootScope','$scope', '$http', '$window', '$log',
         function ($rootScope, $scope, $http, $window, $log) {
             /////////////////////////////////////////////////////////////
+            console.log('Loading first controller');
             $scope.M = {};
             $scope.M.results = [];
             $scope.M.todo = [];
