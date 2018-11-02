@@ -10,6 +10,7 @@ angular.module('myApp.controllers').controller('secondCtrl',
             $scope.M.bokC = 0;
 
             $scope.sprawdzTrojkat = function() {
+                $scope.xxx = (Math.random() * 10);
 
                 // == oznacza sprawdzenie czy lewa storna równa się prawej
                 if ($scope.M.bokA==0) {
@@ -26,6 +27,16 @@ angular.module('myApp.controllers').controller('secondCtrl',
 
 
                 $scope.M.wynik = 'OK -- trójkąt istnieje';
+            };
+
+            $scope.liczbaMniejsza = function () {
+                let a = $scope.A;
+                let b = $scope.B;
+
+                if (a<b) {
+                    return "Liczba a jest mniejsza";
+                } //...
+                return "abc";
             };
 
 
