@@ -10,33 +10,48 @@ angular.module('myApp.controllers').controller('secondCtrl',
             $scope.M.bokC = 0;
 
             $scope.sprawdzTrojkat = function() {
-                $scope.xxx = (Math.random() * 10);
+                // $scope.xxx = (Math.random() * 10);
 
                 // == oznacza sprawdzenie czy lewa storna równa się prawej
-                if ($scope.M.bokA==0) {
-                    $scope.M.wynik = 'Bok A jest 0 -- trójkąt nie istnieje!';
-                    return;
-                }
-                if ($scope.M.bokB==0) {
-                    $scope.M.wynik = 'Bok B jest 0 -- trójkąt nie istnieje!';
-                    return;
-                }
+                let a = parseInt($scope.M.bokA);
+                let b = parseInt($scope.M.bokB);
+                let c = parseInt($scope.M.bokC);
+
+
+                console.log('Abra kadabra');
+                console.log('typ a to ' + (typeof a));
+
                 // A + B > C
+                if (a + b <= c) {
+                    $scope.M.wynik = 'Trójkąt nie istnieje';
+                    return;
+                }
+
                 // A + C > B
+                if (a + c <= b) {
+                    $scope.M.wynik = 'Trójkąt nie istnieje';
+                    return;
+                }
                 // B + C > A
+                if (b + c <= a) {
+                    $scope.M.wynik = 'Trójkąt nie istnieje';
+                    return;
+                }
 
 
                 $scope.M.wynik = 'OK -- trójkąt istnieje';
             };
 
             $scope.liczbaMniejsza = function () {
-                let a = $scope.A;
-                let b = $scope.B;
+                let a = parseInt($scope.A);
+                let b = parseInt($scope.B);
 
                 if (a<b) {
-                    return "Liczba a jest mniejsza";
-                } //...
-                return "abc";
+                    $scope.M.wynik = 'Mniejsza liczba to:' + a;
+                }
+                if (a>=b) {
+                    $scope.M.wynik = 'Mniejsza liczba to:' + b;
+                }
             };
 
 
