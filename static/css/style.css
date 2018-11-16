@@ -1,4 +1,23 @@
 
+body, html {
+    height: 100%;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("chess.jpeg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
 .boxed {
     border-radius: 3px;
     border: 1px solid #2a6496;

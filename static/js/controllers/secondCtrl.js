@@ -43,6 +43,7 @@ angular.module('myApp.controllers').controller('secondCtrl',
                 $scope.M.wynik = 'OK -- trójkąt istnieje';
             };
 
+            // Ustawia $scope.M.wynik w zależności która z liczb, $scope.A / .B jest większa.
             $scope.liczbaMniejsza = function () {
                 let a = parseInt($scope.A);
                 let b = parseInt($scope.B);
@@ -56,18 +57,17 @@ angular.module('myApp.controllers').controller('secondCtrl',
             };
 
 
+
             $scope.potnij = function (tekst_napisu) {
-                console.log('Napis to: ' + tekst_napisu);
-                let tablica = tekst_napisu.split(',');
-                let inna_tablica = ['a','aa','b'];
+                console.log('Napis to: `' + tekst_napisu + '`');
+                let tablica = tekst_napisu.split(',');  // Tnie podany napis na tablicę napisów, używając ',' jako rozdzielnika
+                let inna_tablica = ['a','aa','b'];  // Zadeklarowanie tablicy i wypełnienie jej danymi.
+                inna_tablica[2] = 'dwa';  // zmiana zawartości drugiego (licząc od 0 włącznie) elementu tablicy
 
                 console.log('Tablica to:' + JSON.stringify(tablica));
                 console.log('Element 0 to:' + tablica[0]);
                 console.log('Element 1 to:' + tablica[1]);
                 console.log('Element 2 to:' + tablica[2]);
-                tablica[2] = 'dwa';
-                console.log('Element 2 to:' + tablica[2]);
-
                 console.log('Elementów w tablicy:' + tablica.length);
 
                 tablica.sort();
@@ -104,7 +104,7 @@ angular.module('myApp.controllers').controller('secondCtrl',
                 let mx = 0;
                 let mm = '';
                 for(let gx of gg) {
-                    if (mu[gx]==undefined) mu[gx]=0;
+                    if (mu[gx]===undefined) mu[gx]=0;
                     mu[gx]++;
                     if (mu[gx]>mx) {
                         mx = mu[gx];
