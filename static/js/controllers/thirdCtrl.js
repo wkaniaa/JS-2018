@@ -25,6 +25,15 @@ angular.module('myApp.controllers').controller('thirdCtrl',
                 }
             ];
 
+            $scope.dodajUsera = function (imie, nazwisko, wynik) {
+                console.log('Dodaję usera ' + nazwisko);
+                $scope.uczestnicy.push({
+                    'imie': imie,
+                    'nazwisko': nazwisko,
+                    'wynik': wynik
+                });
+            };
+
 
 
             $scope.sortNazwisko = function () {
