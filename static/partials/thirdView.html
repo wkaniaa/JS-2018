@@ -6,11 +6,54 @@
 
     <div class="row">
         <!-- tu może być col-sm-6, col-md-6, col-lg-6 -->
+        <!--lewy panel (dodwanie uczestników)-->
         <div class="col-lg-6 boxed">
-
-
+            <div class="card">
+                <div class="card-header">
+                    <h5> Dodaj uczestnika</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="inputImie" class="col-sm-3 col-form-label">Imię</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputImie" placeholder="Imię">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputNazwisko" class="col-sm-3 col-form-label">Nazwisko</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputNazwisko" placeholder="Nazwisko">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputWynik" class="col-sm-3 col-form-label">Wynik</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputWynik" placeholder="Wynik">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Dodaj uczestnika</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                </div>
+            </div>
         </div>
+        <!-- Prawy panel: wyniki konkursu -->
+        <!-- Komentarze: Ctrl+/ -->
         <div class="col-lg-6 boxed">
+            <div class="card">
+                <div class="card-header">
+                    Tablica wyników
+                </div>
+                <div class="card-body">
+                    {{uczestnicy}}
+                </div>
+            </div>
 
 
         </div>

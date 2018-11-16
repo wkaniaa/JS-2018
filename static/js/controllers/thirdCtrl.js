@@ -8,6 +8,7 @@ angular.module('myApp.controllers').controller('thirdCtrl',
             $scope.avgScore = 0;
             $scope.bestScore = 0;
 
+            // Deklaracja tablicy uczestników z początkowymi danymi
             $scope.uczestnicy = [
                 {
                     'imie' : 'Tadeusz',
@@ -23,6 +24,8 @@ angular.module('myApp.controllers').controller('thirdCtrl',
                     'wynik' : 3.0
                 }
             ];
+
+
 
             $scope.sortNazwisko = function () {
                 $scope.uczestnicy.sort((a, b) => {
