@@ -8,7 +8,7 @@ var app = angular.module('myApp', [
 //// ROUTES
 app.config(['$routeProvider', '$logProvider', function ($routeProvider, $logProvider) {
     $logProvider.debugEnabled(true);
-    let urlBase = 'partials/';
+    let urlBase = 'partials/';  //sdasdasdasd
 
     $routeProvider.when('/', {
         templateUrl: urlBase + 'firstView.html',
