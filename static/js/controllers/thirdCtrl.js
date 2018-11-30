@@ -7,6 +7,8 @@ angular.module('myApp.controllers').controller('thirdCtrl',
             $scope.userCount = 0;
             $scope.avgScore = 0;
             $scope.bestScore = 0;
+            $scope.pic = 'https://via.placeholder.com/150/92c952';
+            //dane z https://jsonplaceholder.typicode.com/photos
 
             // Deklaracja tablicy uczestników z początkowymi danymi
             $scope.uczestnicy = [
