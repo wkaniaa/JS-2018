@@ -54,10 +54,11 @@
                 </div>
 
                 <div class="card-body">
+
                     <table class="table table-hover table-bordered">
                         <thead>
                         <tr class="table-light">
-                            <th width="30%"  class="clickable"> Imię</th>
+                            <th width="30%"  class="clickable" ng-click="sortImie()"> Imię</th>
                             <th width="30%"  class="clickable" ng-click="sortNazwisko()"> Nazwisko</th>
                             <th width="10%"  class="clickable"> Wynik</th>
                         </tr>
@@ -76,6 +77,9 @@
 
                 <div class="card-footer">
                     Uczestników: {{userCount}}, średni wynik: {{avgScore}}, najlepszy wynik: {{bestScore}}
+                    <img ng-src="{{wybraneZdjecie}}" class="img-responsive" height="50" width="50"/>
+                    <img src="https://via.placeholder.com/150/56a8c2"
+                         class="img-responsive" height="50" width="50"/>
                 </div>
             </div>
 
