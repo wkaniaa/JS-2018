@@ -1,9 +1,6 @@
 <div class=" bg col-sm-12">
     <h4 class="text-center" style="margin: 7px"> Finał Mistrzostw RzKSz </h4>
 
-
-
-
     <div class="row">
         <!-- tu może być col-sm-6, col-md-6, col-lg-6 -->
         <!--lewy panel (dodwanie uczestników)-->
@@ -90,6 +87,34 @@
                 </div>
                 <div class="card-body">
                     {{uczestnicy}}
+                </div>
+            </div>
+
+
+            <div class="card bg-dark text-white">
+                <img class="card-img" src="css/queen.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                    <div class="card-header h3">Wyniki mistrzostw</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                            <tr class="">
+                                <th width="30%"  class="clickable"> Imię</th>
+                                <th width="30%"  class="clickable" ng-click="sortNazwisko()"> Nazwisko</th>
+                                <th width="10%"  class="clickable"> Wynik</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr ng-repeat="u in uczestnicy">
+                                <td>{{u.imie}}</td>
+                                <td>{{u.nazwisko}}</td>
+                                <td>{{u.wynik}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">(no more info here)</div>
                 </div>
             </div>
 
