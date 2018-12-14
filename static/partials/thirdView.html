@@ -80,7 +80,7 @@
 
                 <div class="card-footer">
                     Uczestników: {{userCount}}, średni wynik: {{avgScore}}, najlepszy wynik: {{bestScore}}
-                    <img ng-src="{{wybraneZdjecie}}" class="img-responsive" height="50" width="50"/>
+                    <img ng-src="{{wybraneZdjecie}}" class="img-responsive" height="100" width="100"/>
                     <img src="https://via.placeholder.com/150/56a8c2"
                          class="img-responsive" height="50" width="50"/>
                 </div>
@@ -90,10 +90,31 @@
 
             <div class="card">
                 <div class="card-header">
-                    Tablica wyników
+                    Obrazki z albumu
+                    <input type="text" class="form-control"
+                           ng-model="selectedAlbum">
                 </div>
                 <div class="card-body">
-                    {{uczestnicy}}
+                    <button class="btn btn-primary"
+                            ng-click="getPicturesOfAlbum(selectedAlbum)">
+                        Load extra</button>
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                        <tr class="table-light">
+                            <th class="w-50"> Title </th>
+                            <th class="w-50"> Picture </th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr ng-repeat="p in pictures">
+                            <td>{{p.title}}</td>
+                            <td>
+                                <img ng-src="{{p.thumbnailUrl}}" class="img-responsive" height="50" width="50"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

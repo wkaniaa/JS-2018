@@ -8,7 +8,10 @@ angular.module('myApp.controllers').controller('thirdCtrl',
             $scope.avgScore = 0;
             $scope.bestScore = 0;
 
-            $scope.wybraneZdjecie = 'https://via.placeholder.com/150/56a8c2';
+            $scope.selectedAlbum = 1;
+
+            $scope.wybraneZdjecie =
+                'https://www.fiftyflowers.com/site_files/FiftyFlowers/Image/Product/Blue_Tinted_Roses_Close_Up_350_985dbbbe.jpg';
 
             //dane z https://jsonplaceholder.typicode.com/photos
 
@@ -51,6 +54,25 @@ angular.module('myApp.controllers').controller('thirdCtrl',
                 }
             ];
 
+            $scope.getPictures = function () {
+                $http.get('https://jsonplaceholder.typicode.com/photos')
+                    .success(function (data) {
+                        $scope.pictures = data.slice(0,50);
+                    })
+            };
+
+            $scope.getPicturesOfAlbum = function (albumid) {
+                $http.get('https://jsonplaceholder.typicode.com/photos')
+                    .success(function (data) {
+                        // $scope.pictures = [];
+                        for(let pic of data) {
+                            if (pic.albumId===albumid) {
+                                $scope.pictures.push(pic);
+                            }
+                        }
+                    })
+            };
+
 
 
             // Deklaracja tablicy uczestników z początkowymi danymi
@@ -67,6 +89,10 @@ angular.module('myApp.controllers').controller('thirdCtrl',
                     'imie' : 'Sylwia',
                     'nazwisko' : 'Polak',
                     'wynik' : 3.0
+                }, {
+                    'imie' : 'Marzena',
+                    'nazwisko' : 'Polak',
+                    'wynik' : 3.5
                 }
             ];
 
