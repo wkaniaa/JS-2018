@@ -63,9 +63,9 @@ angular.module('myApp.controllers').controller('thirdCtrl',
 
             $scope.getPicturesOfAlbum = function (albumid) {
                 $http.get('https://jsonplaceholder.typicode.com/photos')
-                    .success(function (data) {
+                    .success(function (wynik) {
                         // $scope.pictures = [];
-                        for(let pic of data) {
+                        for(let pic of wynik) {
                             if (pic.albumId===albumid) {
                                 $scope.pictures.push(pic);
                             }
@@ -120,6 +120,20 @@ angular.module('myApp.controllers').controller('thirdCtrl',
                     else return -1;
                 });
             };
+
+            let solveA = function (n, s, v) {
+                let mx = 0;
+                for(let vv of v) {
+                    mx = Math.max(mx, vv);
+                }
+                console.log(mx);
+            };
+
+
+            $scope.testsA = function () {
+                solveA(3, 3, [1, 2, 3]);
+            };
+
 
 
 

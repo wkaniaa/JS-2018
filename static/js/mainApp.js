@@ -22,6 +22,9 @@ app.config(['$routeProvider', '$logProvider', function ($routeProvider, $logProv
     }).when('/thirdView', {
         templateUrl: urlBase + 'thirdView.html',
         controller: 'thirdCtrl'
+    }).when('/fourthView', {
+        templateUrl: urlBase + 'fourthView.html',
+        controller: 'fourthCtrl'
     });
 }]);
 
