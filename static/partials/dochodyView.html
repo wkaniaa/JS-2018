@@ -20,29 +20,31 @@
                 </thead>
                 <tbody>
 
-                <tr ng-repeat="c in dane">
+                <tr ng-repeat="c in wynik">
                     <td class="align-middle ">
                         {{c.pesel}}
                     </td>
                     <td><input type="text" class="form-control"  ng-model="c.name"></td>
                     <td><input type="text" class="form-control"  ng-model="c.dochod"></td>
                     <td class="align-middle">
-                        <i class="far fa-lg fa-save mr-2 clickable" (click)="doSometing(c)"></i>
+                        <i class="fas fa-allergies fa-lg mr-2 clickable" (click)="doSometing(c)"></i>
                     </td>
                 </tr>
 
                 </tbody>
             </table>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-3 ">
+                    <input type="text" class="form-control col-10 float-right" placeholder="dolna granica"  ng-model="iLow">
                 </div>
-
-
-                <div class="col-sm-5 ">
-                    <input type="text" class="form-control col-10 float-right" placeholder="(todo)"  ng-model="newCatName">
+                <div class="col-sm-3 ">
+                    <input type="text" class="form-control col-10 float-right" placeholder="górna granica"  ng-model="iHigh">
+                </div>
+                <div class="col-sm-3 ">
+                    <input type="text" class="form-control col-10 float-right" placeholder="pesel"  ng-model="iPesel">
                 </div>
                 <div class="col-sm-3">
-                    <button class="btn btn-outline-info" ng-click="cats.newCat(newCatName)">Dodaj</button>
+                    <button class="btn btn-outline-info" ng-click="wyszukaj()">Szukaj</button>
                 </div>
             </div>
         </div>
