@@ -46,6 +46,14 @@ angular.module('myApp.controllers').controller('fourthCtrl',
                 console.log('Najwieksza liczba to:' + najwieksza);
                 console.log('Wszystkich liczb w tablicy jest: ' + n);
                 //todo: wyliczć średnią liczb w z tablicy `arr`
+
+                //suma elementów tablicy:
+                let suma = 0;
+                for(let liczba of arr) {
+                    suma += liczba;  //często używany skrót, zamiast zapisu: suma = suma + liczba
+                }
+                console.log('Sum:' + suma);
+                console.log('Średnia:' + suma / arr.length);
             };
 
             //funkcja połączona ze "scope" jest czymś, co można "podłączyć" pod "ng-click"
