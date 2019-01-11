@@ -8,8 +8,8 @@ angular.module('myApp.controllers').controller('dochodyCtrl',
             $scope.dane = [
                 {pesel: 'AA11', name: 'Koepka', dochod: 413},
                 {pesel: 'VA11', name: 'Rose', dochod: 461},
-                {pesel: 'VA11', name: 'Johnson', dochod: 362},
-                {pesel: 'VA11', name: 'Thomas', dochod: 377}
+                {pesel: 'VA12', name: 'Johnson', dochod: 362},
+                {pesel: 'VX11', name: 'Thomas', dochod: 377}
             ];
 
 
@@ -17,13 +17,23 @@ angular.module('myApp.controllers').controller('dochodyCtrl',
 
             $scope.wyszukaj = function () {
                 $scope.wynik = [];
-                for(let player of $scope.dane) {
+                for (let player of $scope.dane) {
                     if ($scope.iLow !== undefined) {    //sprawdzenie czy coś zostało wpisane w pole iLow na UI
-                        if (player.dochod>= $scope.iLow) {
+                        if (player.dochod >= $scope.iLow) {
                             $scope.wynik.push(player);
                         }
                     }
                 }
+            };
+
+            //wyszukać po peselu (pesel zaczyna się od...)
+
+            let solve2 = function (arr) {
+                let g = "ga";
+                if (g.startsWith("g")) {
+                    console.log("OK");
+                }
+
             }
 
         }
