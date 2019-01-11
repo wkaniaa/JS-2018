@@ -15,6 +15,52 @@ angular.module('myApp.controllers').controller('dochodyCtrl',
 
             /////////////////////////////////////////////////////////////
 
+            //Filtruje tablicę dochodów tak by pozostali tylko gracze o dochodach między low i high
+            //zwraca przefiltrowaną tablicę
+            let filterIncomesRange = function (incomes, low, high) {
+                console.log('Filtrowanie po range low=' + low + ' high=' + high);
+                let wyfiltrowane = [];
+                for (let player of incomes) {
+                    if (player.dochod >= low && player.dochod <= high) {
+                        wyfiltrowane.push(player);
+                    }
+                }
+                return wyfiltrowane;
+            };
+
+            //Filtruje tablicę dochodów tak by pozostali tylko gracze o peselach zaczynających się na `prez
+            let filterIncomesPesel = function (incomes, pre) {
+                let wyfiltrowane = [];
+                for (let player of incomes) {
+                    if (player.pesel.startsWith(pre)) {
+                        wyfiltrowane.push(player);
+                    }
+                }
+                return wyfiltrowane;
+            };
+
+
+            //funkcja biorąca tablicę 'obiektów dochodowych', i filtrująca: od dołu, góry i po peselu
+            $scope.filterIncomes = function (incomes) {
+                console.log('filtruję tablicę' + JSON.stringify(incomes));
+                let filterLow = true;
+                let filterHi = true;
+                let filterPesel = true;
+
+                if (filterLow) {
+                    incomes = filterIncomesRange(incomes, $scope.iLow, $scope.iHigh);
+                }
+                console.log('Wyfiltrowane:' + JSON.stringify(incomes));
+
+                if (filterPesel) {
+                    incomes = filterIncomesPesel(incomes, $scope.iPesel);
+                }
+                console.log('Wyfiltrowane:' + JSON.stringify(incomes));
+                $scope.wynik = incomes;
+            };
+
+
+
             $scope.wyszukaj = function () {
                 $scope.wynik = [];
                 for (let player of $scope.dane) {
