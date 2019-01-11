@@ -30,6 +30,7 @@ angular.module('myApp.controllers').controller('dochodyCtrl',
 
             //Filtruje tablicę dochodów tak by pozostali tylko gracze o peselach zaczynających się na `prez
             let filterIncomesPesel = function (incomes, pre) {
+                console.log('Filtrowanie po peselu; szukany prefix=' + pre);
                 let wyfiltrowane = [];
                 for (let player of incomes) {
                     if (player.pesel.startsWith(pre)) {
