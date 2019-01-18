@@ -87,6 +87,10 @@ angular.module('myApp.controllers').controller('teacherCtrl',
 
             };
 
+            $scope.addQuestion = function () {
+                $scope.test.items.push({"from": "", "to": ""});
+            };
+
             $scope.loadTest = function () {
                 $http({
                     url: URL + '/tests',
