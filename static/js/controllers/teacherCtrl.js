@@ -5,6 +5,10 @@ angular.module('myApp.controllers').controller('teacherCtrl',
             console.log('Loading `dochody` controller');
             $scope.M = {};
             $scope.wynik = [];
+            const URL = "http://basra.wsi.edu.pl:1111";
+
+            $scope.test = {};
+
             $scope.dane = [
                 {pesel: 'AA11', name: 'Koepka', dochod: 413},
                 {pesel: 'VA11', name: 'Rose', dochod: 461},
@@ -81,7 +85,37 @@ angular.module('myApp.controllers').controller('teacherCtrl',
                     console.log("OK");
                 }
 
+            };
+
+            $scope.loadTest = function () {
+                $http({
+                    url: URL + '/tests',
+                    method: 'GET',
+                    params: {
+                        alias: "dd"
+                    }
+                }).success(function (dane) {
+                    $scope.test = dane;
+                });
+            };
+
+
+            $scope.saveTest = function(test) {
+                $http({
+                    url: $rootScope.DATA + '/groups',
+                    method: 'POST',
+                    data: JSON.stringify(g),
+                    params: {
+                        wdauth: $rootScope.R.wdauth
+                    }
+                }).success(function(data){
+                    $scope.tube('Grupa została utworzona');
+                    $scope.loadGroups();
+                    $scope.M.sGroup = undefined;
+                });
+
             }
+
 
         }
     ]
