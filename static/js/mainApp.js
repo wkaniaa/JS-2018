@@ -28,6 +28,9 @@ app.config(['$routeProvider', '$logProvider', function ($routeProvider, $logProv
     }).when('/dochody', {
         templateUrl: urlBase + 'dochodyView.html',
         controller: 'dochodyCtrl'
+     }).when('/teacher', {
+         templateUrl: urlBase + 'teacherView.html',
+         controller: 'teacherCtrl'
     });
 }]);
 
