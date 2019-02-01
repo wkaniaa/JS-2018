@@ -7,7 +7,7 @@ angular.module('myApp.controllers').controller('teacherCtrl',
             $scope.wynik = [];
             const URL = "http://basra.wsi.edu.pl:1111";
 
-            $scope.test = {};
+            $scope.test = {};   //aktualnie edytowany test
 
             $scope.dane = [
                 {pesel: 'AA11', name: 'Koepka', dochod: 413},
@@ -104,20 +104,16 @@ angular.module('myApp.controllers').controller('teacherCtrl',
             };
 
 
-            $scope.saveTest = function(test) {
+            //ta funkcja zapisuje podany `test` w systemie backendowym pod adresem `URL`
+            $scope.saveTest = function() {
+                let testDoZapisania = $scope.test;
                 $http({
-                    url: $rootScope.DATA + '/groups',
+                    url: URL + '/tests',
                     method: 'POST',
-                    data: JSON.stringify(g),
-                    params: {
-                        wdauth: $rootScope.R.wdauth
-                    }
+                    data: JSON.stringify(testDoZapisania)
                 }).success(function(data){
-                    $scope.tube('Grupa została utworzona');
-                    $scope.loadGroups();
-                    $scope.M.sGroup = undefined;
+                    console.log('Test zosatał zapisany');
                 });
-
             }
 
 
