@@ -9,12 +9,19 @@ angular.module('myApp.controllers').controller('teacherCtrl',
 
             $scope.editedTest = {};   //aktualnie edytowany editedTest
 
-
             /////////////////////////////////////////////////////////////
 
             $scope.addQuestion = function () {
                 $scope.editedTest.items.push({"from": "", "to": ""});
             };
+
+            $scope.newTest = function () {
+                console.log('Tworzę nowy test');
+                $scope.editedTest = {items: []};
+                for (let i = 0; i<3; i++) {
+                    $scope.addQuestion();
+                }
+            }
 
             $scope.loadTest = function () {
                 $http({
@@ -27,7 +34,6 @@ angular.module('myApp.controllers').controller('teacherCtrl',
                     $scope.editedTest = dane;
                 });
             };
-
 
             //ta funkcja zapisuje podany `editedTest` w systemie backendowym pod adresem `URL`
             $scope.saveTest = function() {
