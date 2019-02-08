@@ -7,7 +7,7 @@
             <div class="col-sm-8" style="height: 1000px" >
                 <div class="card" style="background-color: rgba(255,255,255,0.3)">
                     <div class="card-header h3">
-                        Edycja testu "{{test.alias}}" ({{test.testid}})
+                        Edycja testu "{{editedTest.alias}}" ({{editedTest.testid}})
                         <i class="fas fa-sync-alt clickable float-sm-right"></i>
                     </div>
                     <div class="card-body">
@@ -23,7 +23,7 @@
 
                             <!--bs4: default, primary, info, success, warning, danger -->
                             <!--dla tekstu: text-(kolor)  , albo bg-(kolor)    -->
-                            <tr ng-repeat="item in test.items">
+                            <tr ng-repeat="item in editedTest.items">
                                 <td><input type="text" class="form-control"  ng-model="item.from"></td>
                                 <td><input type="text" class="form-control"  ng-model="item.to"></td>
                                 <td><i class="fas fa-trash clickable"></i></td>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="card-footer ">
                         Debug... <br/>
-                        <textarea class="form-control" id="textArea1" rows="5" style="width:100%">{{test}} </textarea>
+                        <textarea class="form-control" id="textArea1" rows="5" style="width:100%">{{editedTest}} </textarea>
                     </div>
                 </div>
             </div>
