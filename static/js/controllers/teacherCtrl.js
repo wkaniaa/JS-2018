@@ -5,16 +5,11 @@ angular.module('myApp.controllers').controller('teacherCtrl',
             console.log('Loading `dochody` controller');
             $scope.M = {};
             $scope.wynik = [];
+            // const URL = "https://guam.wsi.edu.pl:1111";
             const URL = "http://basra.wsi.edu.pl:1111";
 
             $scope.test = {};   //aktualnie edytowany test
 
-            $scope.dane = [
-                {pesel: 'AA11', name: 'Koepka', dochod: 413},
-                {pesel: 'VA11', name: 'Rose', dochod: 461},
-                {pesel: 'VA12', name: 'Johnson', dochod: 362},
-                {pesel: 'VX11', name: 'Thomas', dochod: 377}
-            ];
 
 
             /////////////////////////////////////////////////////////////
